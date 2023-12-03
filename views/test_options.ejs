@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><%=text%></p>
+    <select name="" id="">
+        <% for(const key in rows1) {%>
+        <option ><%=rows1[key].Sem%></option>
+        <% } %>
+    </select>
+    <select name="" id="">
+        <% for(const key in rows2) {%>
+        <option ><%=rows2[key].Course%></option>
+        <% } %>
+    </select>
+<br>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Sem</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+            <% if(rows1.length && rows2.length) { %>
+                <% for(const key in rows2) { %>
+                    <tr>
+                        <td><%=rows1[key].Sem %></td>
+                        <td><%=rows2[key].Course %></td>
+                        <td><%=rows2[key].Course %></td>
+                    </tr>
+                    <%} %>
+            <%} else { %>
+                <tr>
+                    <td>No Data found</td>
+                </tr>
+            <%}%>
+
+    </table>
+</body>
+</html>

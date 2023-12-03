@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" 
+    type="text/css"
+    href="/css/style.css">
+</head>
+<body>
+  <div>
+    <i style="font-size: 30px;" class='bx bx-home-alt icon' ><a style="font-size: 10px;" href="/">Home</a></i>
+    <i style="font-size: 30px;" class='bx bx-bar-chart-alt-2 icon' ><a style="font-size: 10px;" href="home">Time Table</a></i>
+</div>
+    <%- include("partials/nav") -%>
+     <section class="home">
+        <div class="text">
+                Time Table</div>
+    </section>
+    <div class="container">
+        <div class="control-group">
+          <h1>Enter Details</h1>
+          <form autocomplete="off" method="post">
+          <div class="select">
+            <select required name="select_course">
+              <option>Select Course</option>
+              <% for(const key in courses) {%>
+                <option selected="MCA" ><%=courses[key].Course%></option>
+                <% } %>
+            </select>
+            <div class="select__arrow"></div>
+          </div>
+          <div class="select" >
+            <select required name="select_sem">
+              <option>Select Semester</option>
+              <% for(const key in sem) {%>
+                <option ><%=sem[key].semester %></option>
+                <% } %>
+            </select>
+            <div class="select__arrow"></div>
+          </div>
+
+          <div class="select" >
+            <select required name="select_exam">
+              <option>Select Exam</option>
+              <% for(const key in exam) {%>
+                <option ><%=exam[key]%></option>
+                <% } %>
+            </select>
+            <div class="select__arrow"></div>
+          </div>
+          <button type="submit" class="bubbly-button">Generate</button>
+          </form>
+        </div>
+      </div>
+</body>
+<%- include("partials/sidebar_script") -%>
+<script src="/js/bubbly_button_logic.js"></script>
+</html>

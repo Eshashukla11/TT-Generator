@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Data</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head> 
+  <body>
+    <div class="container">
+      <h2>Enter New values in <span style="text-decoration:underline ;"><%=selected_course%></span> table </h2>
+      <form action="/update_data" method="post">
+        <% if(selected_course == "courses") { %>
+          <input
+            type="hidden"
+            value="<%=result.s_no%>"
+            name="id"
+          />
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter course"
+                  name="course"
+                  value="<%=result.Course%>"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="semester">Semester</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter semester"
+                  name="semester"
+                  value="<%=result.semester%>"
+                  required
+                />
+              </div>
+            <% } else { %>
+              <input
+            type="hidden"
+            value="<%=result.s_no%>"
+            name="id"
+          />
+                <div class="form-group">
+                    <label for="course">Course:</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter course"
+                      name="course"
+                      value="<%=result.Course%>"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter subject"
+                      name="subject"
+                      value="<%=result.Subject%>"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="subject_code">Subject Code:</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter subject code"
+                      name="subject_code"
+                      value="<%=result.Subject_Code%>"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Enter semester"
+                      name="semester"
+                      value="<%= result.semester%>"
+                      required
+                    />
+                  </div>                  
+                <% } %>
+        
+        <button class="btn btn-primary" type="submit">ADD</button>
+      </form>
+    </div>
+  </body>
+</html>

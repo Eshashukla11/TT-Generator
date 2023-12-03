@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <link rel="stylesheet" type="text/css" href="/css/timeTable.css">
+</head>
+<body class="tt_body">
+       
+<div class="tt_container">
+    <div class="main-heading">
+        <h2>BHILAI INSTITUTE OF TECHNOLOGY, DURG</h2>
+        <p><b>(An Autonomus College)</b></p>
+        <h3><%=exam_options %> (<span class="span_month"></span> - <span class="span_year"></span>)</h3>
+        <h2 id="underline_h2">TIME TABLE FOR <%=course%> <span class="Sem_span"></span> SEMESTER</h2>
+    </div>
+    
+    
+    <table class="table_body" border="1" cellpadding="10" cellspacing="0" style="text-align:center;">
+        <thead>
+            <th class="date_day_style">Date/Day</th>
+            <th class="date_day_style">Time</th>
+            <th class="date_day_style">Subject</th>
+            <th class="date_day_style">Subject Code</th>
+        </thead>
+        <%if(data.length) { %>
+            <% for(const key in data) { %>
+        <tr>
+             <td  class="date_day_row"><input required  type="date" id="datepicker"></input><br><span class="day"></span></td>
+            <td class="time_row"></td>
+            <td class="subject_row"><%=data[key].Subject%></td>
+            <td class="subjectCode_row"><%=data[key].Subject_Code %></td>
+            <%} %>
+        </tr>
+        <% } else { %>
+            <tr>
+                <td>no data found</td>
+                <td>no data found</td>
+                <td>no data found</td>
+                <td>no data found</td>
+            </tr>
+        <% } %>
+    </table>
+    <div>
+        <button class="print">Print</button>
+        <!-- <button class="mail">Mail</button> -->
+    </div>
+
+</div>
+<script>
+    const sem_span = document.querySelector('.Sem_span')
+    const date = new Date()
+    document.querySelector('.span_year').textContent = date.getFullYear();
+    let semData = '<%-sem%>'
+
+let semester = {
+    1:"FIRST",
+    2:"SECOND",
+    3:"THIRD",
+    4:"FOURTH",
+}
+
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+sem_span.textContent = semester[semData]
+
+document.querySelector('.span_month').textContent = months[date.getMonth()]
+
+</script>
+<script src="./js/time_table.js"></script>
+</body>
+</html>

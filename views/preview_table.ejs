@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/timeTable.css" />
+  </head>
+  <body>
+    <div class="tt_container main">
+      <a href="/add_data">Add Data</a>
+      <table
+        class=".full_view"
+        border="1"
+        cellpadding="10"
+        cellspacing="0"
+        style="text-align: center"
+      >
+        <% if(columns.length) { %>
+        <thead>
+          <%for(const key in columns) { %>
+          <th class="t_head"><%=columns[key]%></th>
+          <% } %>
+          <th>ACTION</th>
+        </thead>
+        <% } else { %>
+        <thead>
+          <th>no data found</th>
+        </thead>
+        <% } %> <% if(columns.length) { %> <% for(const key in tables) { %>
+        <tr class="row_styles">
+          <td class="column_styles"><%=tables[key].s_no%></td>
+          <td class="column_styles"><%=tables[key].Course%></td>
+          <% if(tables[key].Subject) {%>
+          <td class="column_styles"><%=tables[key].Subject%></td>
+          <td class="column_styles"><%=tables[key].Subject_Code %></td>
+          <% } %>
+          <td class="column_styles"><%=tables[key].semester%></td>
+          <td>
+            <a href="/edit/<%=tables[key].s_no%>">edit</a>
+            <a href="/delete_data/<%=tables[key].s_no%>">delete</a>
+          </td>
+          <% } %>
+        </tr>
+        <% } else { %>
+        <tr>
+          <td class="column_styles">no data found</td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+    <script>
+      window.history.pushState(null, null, document.URL);
+      window.addEventListener("popstate", function (event) {
+        window.location.replace(`http://localhost:8000/manage`);
+      });
+    </script>
+  </body>
+</html>

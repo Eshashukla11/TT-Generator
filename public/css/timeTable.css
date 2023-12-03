@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* time table  */
+
+.tt_body {
+    background-color: white;
+    text-align: center;
+  }
+  .full_view {
+    margin-top: 40px;
+    text-align: center;
+    height: 320px;
+    width: 650px;
+  }
+
+  .column_styles {
+    padding: 35px;
+  }
+.t_head {
+  padding: 20px;
+  text-transform: uppercase;
+  font-family:  sans-serif;
+}
+
+  .tt_container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .main-heading {
+        margin: 35px;
+        padding: 30px;
+        line-height: 2rem;
+    }
+    #underline_h2 {
+        text-decoration: underline;
+    }
+
+.span_month {
+  text-transform: uppercase;
+}
+
+  
+  .table_body {
+    margin-top: 40px;
+    text-align: center;
+    height: 320px;
+    width: 650px;
+  }
+  
+  #datepicker {
+    border: none;
+    outline: none;
+    text-align: center;
+    padding-left: 10px;
+  }
+  .timepicker {
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+  }
+  
+  .day {
+    font-size: 15px;
+    padding-right: 10px;
+  }
+  
+  .date_day_style {
+    background-color: #808080 !important;
+  }
+  
+  @page{
+    size: auto;
+    margin: 3mm;
+  }
+  
+  .time_row {
+    border: 0;
+  }
+  
+  /* table tr td[data-rel="time"] {
+    border:0;
+  } */
+  
+  .date_day_row,.time_row,.subject_row,.subjectCode_row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .print,.mail {
+    margin: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+
+  }
+  @media screen and (max-width: 500px) {
+
+    .full_view {
+      width: 100px;
+    }
+  }
+
+  @media print {
+    .print,.mail {
+        visibility: hidden;
+    }
+  }

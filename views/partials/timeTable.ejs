@@ -1,0 +1,56 @@
+<table border="1" cellpadding="10" cellspacing="0" style="text-align:center;">
+    <thead>
+        <th>Date/Day</th>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>Subject Code</th>
+    </thead>
+    <%if(data.length) { %>
+        <% for(const key in data) { %>
+    <tr>
+         <td><input required  type="date" id="datepicker"></input></td>
+        <td class="border">12:20 AM TO <br> 3:30 PM
+        </td>
+        <td><%=data[key].Subject%></td>
+        <td><%=data[key].Subject_Code %></td>
+        <%} %>
+    </tr>
+    <% } %>
+</table>
+
+
+   <!-- <table border="1" cellpadding="10" cellspacing="0" style="text-align:center;">
+        <thead>
+            <th>Date/Day</th>
+            <th>Time</th>
+            <th>Subject</th>
+            <th>Subject Code</th>
+        </thead>
+        <tr>
+            <td>17.10.2022 <br>Monday</td>
+            <td rowspan="6">10:30 AM TO <br> 12:30 PM</td>
+            <td>Software Engineering and Project Management</td>
+            <td>261301CA</td>
+        </tr>
+        <tr>
+            <td>17.10.2022 <br>Monday</td>
+            <td>Software Engineering and Project Management</td>
+            <td>261301CA</td>
+        </tr>
+        <tr>
+            <td>17.10.2022 <br>Monday</td>
+            <td>Software Engineering and Project Management</td>
+            <td>261301CA</td>
+        </tr>
+        <tr>
+            <td>17.10.2022 <br>Monday</td>
+            <td>Software Engineering and Project Management</td>
+            <td>261301CA</td>
+        </tr>
+        <tr>
+            <td>17.10.2022 <br>Monday</td>
+            <td>Software Engineering and Project Management</td>
+            <td>261301CA</td>
+        </tr>
+        
+    </table> -->

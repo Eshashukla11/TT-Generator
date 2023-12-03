@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <%- include("partials/nav") -%>
+     <section class="home">
+        <div class="text"> Manage</div>
+    </section>
+    <div class="container">
+        <div class="display_box">
+            <form action="/manage_table" autocomplete="off" method="post">
+                <div class="select">
+                  <select required name="select_table">
+                    <!-- <option selected="course_subjects"></option> -->
+                    <% for(let i = 0;i<tables_options.length-1;i++) {%>
+                        <option><%=tables_options[i].Tables_in_time_table_db%></option>
+                        <% } %>
+                  </select>
+                  <div class="select__arrow"></div>
+                </div>
+                <button type="submit" class="bubbly-button">Generate</button>
+                </form>
+        </div>
+    </div>
+</body>
+<%- include("partials/sidebar_script") -%>
+</html>
